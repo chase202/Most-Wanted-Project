@@ -29,7 +29,12 @@ function app(people) {
             searchResults = searchByName(people);
             break;
         case "no":
-            //! TODO #4: Declare a searchByTraits (multiple traits) function //////////////////////////////////////////
+            
+        function searchByTraits(_multipletraits){
+
+        }
+        
+        //! TODO #4: Declare a searchByTraits (multiple traits) function //////////////////////////////////////////
                 //! TODO #4a: Provide option to search for single or multiple //////////////////////////////////////////
             searchResults = searchByTraits(people);
             break;
@@ -64,18 +69,34 @@ function mainMenu(person, people) {
     // Routes our application based on the user's input
     switch (displayOption) {
         case "info":
-            //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
+        //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
+ 
             let personInfo = displayPerson(person[0]);
             alert(personInfo);
-            break;
+        
+        
+        break;
+        
         case "family":
             //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
             // HINT: Look for a people-collection stringifier utility function to help
-            let personFamily = findPersonFamily(person[0], people);
+
+function findPersonFamily(person, people){
+    
+    let personFamily = findPersonFamily(person[0], people);
+    if (!person[0]) {
+        
+    }
             alert(personFamily);
+
+
+            
+            
+            
+            
             break;
-        case "descendants":
+            case "descendants":
             //! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
             // HINT: Review recursion lecture + demo for bonus user story
             let personDescendants = findPersonDescendants(person[0], people);
@@ -140,6 +161,18 @@ function displayPeople(people) {
 function displayPerson(person) {
     let personInfo = `First Name: ${person.firstName}\n`;
     personInfo += `Last Name: ${person.lastName}\n`;
+    personInfo = `gender: ${person.gender}\n`;
+    personInfo = `dob:${person.dob}\n`;
+    personInfo = `height:${person.height}\n`;
+    personInfo = `weight:${person.weight}\n`;
+    personInfo = `eyecolor:${person.eyecolor}\n`;
+    personInfo = `occupation:${person.occupation}\n`;
+    personInfo = `parents:${person.parents}\n`;
+    personInfo = `currentSpouse:${person.currentSpouse}\n`;
+
+console.log(person, personInfo);
+   
+   
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
