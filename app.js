@@ -71,7 +71,7 @@ function mainMenu(person, people) {
         case "info":
         //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
- 
+
             let personInfo = displayPerson(person[0]);
             alert(personInfo);
         
@@ -82,13 +82,6 @@ function mainMenu(person, people) {
             //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
             // HINT: Look for a people-collection stringifier utility function to help
 
-function findPersonFamily(person, people){
-    
-    let personFamily = findPersonFamily(person[0], people);
-    if (!person[0]) {
-        
-    }
-            alert(personFamily);
 
 
             
@@ -161,14 +154,14 @@ function displayPeople(people) {
 function displayPerson(person) {
     let personInfo = `First Name: ${person.firstName}\n`;
     personInfo += `Last Name: ${person.lastName}\n`;
-    personInfo = `gender: ${person.gender}\n`;
-    personInfo = `dob:${person.dob}\n`;
-    personInfo = `height:${person.height}\n`;
-    personInfo = `weight:${person.weight}\n`;
-    personInfo = `eyecolor:${person.eyecolor}\n`;
-    personInfo = `occupation:${person.occupation}\n`;
-    personInfo = `parents:${person.parents}\n`;
-    personInfo = `currentSpouse:${person.currentSpouse}\n`;
+    personInfo += `gender: ${person.gender}\n`;
+    personInfo += `dob:${person.dob}\n`;
+    personInfo += `height:${person.height}\n`;
+    personInfo += `weight:${person.weight}\n`;
+    personInfo += `eyeColor:${person.eyeColor}\n`;
+    personInfo += `occupation:${person.occupation}\n`;
+    personInfo += `parents:${person.parents}\n`;
+    personInfo += `currentSpouse:${person.currentSpouse}\n`;
 
 console.log(person, personInfo);
    
@@ -217,3 +210,108 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+// function findPersonFamily(person, people){
+    
+//     let personFamily = findPersonFamily.filter(person[0], people);
+//     if (element === spouse + parents + siblings){
+//         return true;
+
+//     }
+//     else {
+//         return false
+//     }
+//     alert(personFamily);
+//     }
+
+            
+//searchByEyeColor
+function searchByEyeColor(people) {
+    let eyeColor = promptFor("What is the person's eye color?", chars);
+    let foundeyeColor = people.filter(function (person) {
+        if (person.eyeColor === eyeColor){
+            return true;
+        }
+    });
+    return foundeyeColor;
+}
+
+function searchBygender(people) {
+    let gender = promptFor("What is the person's Gender?", chars);
+    let foundgender = people.filter(function (person) {
+        if (person.gender === gender){
+            return true;
+        }
+    });
+    return foundgender;
+}
+
+function searchBydob(people){
+    let dob = promptFor("what is the person's dob?", chars);
+    let founddob = people.filter(function (person) {
+        if (person.dob === dob) {
+            return true;
+        }
+    });
+    return founddob;
+}
+
+function searchByheight(people){
+    let height = promptFor("What is the person's height?", chars);
+    let foundheight = people.filter(function (person) {
+        if (person.height === height) {
+            return true;
+        }
+    });
+    return foundheight;
+}
+
+function searchByweight(people){
+    let weight = promptFor("What is the person's weight?", chars);
+    let foundweight = people.filter(function (person){
+        if (person.weight === weight){
+            return true;
+        }
+    });
+    return foundweight;
+}
+
+function searchByoccupation(people){
+    let occupation = promptFor("What is the person's occupation?", chars);
+    let foundoccupation = people.filter(function (person){
+        if (person.occupation === occupation){
+            return true;
+        }
+    });
+    return foundoccupation;
+}
+
+function searchByparents(people){
+    let parents = promptFor("Who is this person's parents?", chars);
+    let foundparents = people.filter(function (person){
+        if (person.parents === parents){
+            return true;
+        }
+    });
+return foundparents;
+}
+
+function searchBycurrentSpouse(people){
+    let currentSpouse = promptFor("Who is this person's current spouse?", chars);
+    let foundcurrentSpouse = people.filter(function (person){
+        if (person.currentSpouse === currentSpouse){
+            return true;
+        }
+    });
+return foundcurrentSpouse;
+}
+
+function searchByid(people){
+    let id = promptFor("What is this person's id?", chars);
+    let foundid = people.filter(function (person){
+        if (person.id === id){
+            return true;
+        }
+    });
+return foundid;
+}
