@@ -326,8 +326,78 @@ function findPersonFamily(person, family) {
 
         return app(family);
     }
-    let findPersonFamily = prompt(
+    let displayOption = prompt(
         `Found ${person[0].family}. Do you want to know their 'info', 'family', or 'descendants'?\nType the option you want or type 'restart' or 'quit'.`
     );
 } 
 //How do I get this function to pull in parents and current spouse?
+//create a search by function for family
+
+function searchByfamily(people){
+    let family = promptFor("Who is this person's family?", chars);
+    let foundfamily = people.filter(function (person){
+        if (person.family === family){
+            return true;
+        }
+    });
+return foundfamily;
+}
+
+//how do I get parents and current spouse into this search function?
+
+function findPersonFamily(people) {
+    alert(
+        people
+            .map(function (person) {
+                return `${person.parents} ${person.currentSpouse}`;
+            })
+            .join("\n")
+    );
+}
+
+
+//let foundparents = people.filter(function (person) {
+  //  if (person.parents === person.parents === parents) {
+   //     return true;
+  //  }
+//});
+//return foundparents;
+
+//}
+
+function searchBycurrentSpouse(people){
+    let currentSpouse = promptFor("Who is this person's current spouse?", chars);
+    let foundcurrentSpouse = people.filter(function (person){
+        if (person.currentSpouse === currentSpouse){
+            return true;
+        }
+    });
+}
+    
+    function searchByparents(people){
+        let parents = promptFor("Who is this person's parents?", chars);
+        let foundparents = people.filter(function (person){
+            if (person.parents === parents){
+                return true;
+            }
+        });
+    }  
+
+    const PersonFamily = ['parents', 'curentSpouse'];
+console.log(PersonFamily.includes('currentSpouse'));
+console.log(PersonFamily.includes('parents'));
+
+// Expected output: true
+
+const array1 = [1, 2, 3];
+
+console.log(array1.includes(2));
+// expected output: true
+
+const pets = ['cat', 'dog', 'bat'];
+
+console.log(pets.includes('cat'));
+// expected output: true
+
+console.log(pets.includes('at'));
+// expected output: false
