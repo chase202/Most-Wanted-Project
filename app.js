@@ -316,7 +316,7 @@ function searchByid(people){
 return foundid;
 }
 
-
+console.log(people, personInfo);
 //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
             // HINT: Look for a people-collection stringifier utility function to help
 
@@ -336,7 +336,7 @@ function findPersonFamily(person, family) {
 function searchByfamily(people){
     let family = promptFor("Who is this person's family?", chars);
     let foundfamily = people.filter(function (person){
-        if (person.family === family){
+        if (person.currentSpouse === family){
             return true;
         }
     });
@@ -388,6 +388,14 @@ console.log(PersonFamily.includes('currentSpouse'));
 console.log(PersonFamily.includes('parents'));
 
 // Expected output: true
+
+
+
+
+
+
+
+
 
 const array1 = [1, 2, 3];
 
