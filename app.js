@@ -315,3 +315,19 @@ function searchByid(people){
     });
 return foundid;
 }
+
+
+//! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
+            // HINT: Look for a people-collection stringifier utility function to help
+
+function findPersonFamily(person, family) {
+    if (!person[0]) {
+        alert("Could not find that individual.");
+
+        return app(family);
+    }
+    let findPersonFamily = prompt(
+        `Found ${person[0].family}. Do you want to know their 'info', 'family', or 'descendants'?\nType the option you want or type 'restart' or 'quit'.`
+    );
+} 
+//How do I get this function to pull in parents and current spouse?
